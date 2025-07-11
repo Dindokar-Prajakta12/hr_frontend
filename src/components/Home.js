@@ -14,8 +14,8 @@ const Home = () => {
         </div>
 
         <div className="w-1/2 flex flex-col justify-center align-center">
-          <h1>Welcome to the HR candidate Tracking System</h1>
-          <p>Streamline your hiring process with our platform.</p>
+<h1 className="text-3xl font-bold mb-2">Welcome to the HR candidate Tracking System</h1>
+<p className="text-lg mb-4">Streamline your hiring process with our platform.</p>
           <div className="flex justify-around">
             <button onClick={() => navigate('/register')} className="home-btn register-btn w-40">
               Register
