@@ -1,17 +1,24 @@
-STEP 1 : Extract the zip folder provided or download it from github
+# 💼 HR Candidate Tracker System
 
-STEP 2 : Open server folder write command "npm install/ npm init -y" to install node modules
+A full-stack MERN web application for HRs to manage candidate data, call statuses, and view daily reports.
 
-STEP 3 : Open client folder write command "npm install" to install node modules
+## 🚀 Features
 
-STEP 4 : install the packages that are required to run the server(nodemon , cors , express , mongoose , bcrypt , joi ,jsonwbtoken , dotenv , nodemailer )  
+- Upload Excel files (.xlsx) with candidate details
+- Parse and store candidate data in MongoDB
+- Manage calling status (Shortlisted, Rejected, Interested, Not Connected)
+- Add notes per candidate
+- Daily summary report (Connected vs Not Connected, Total Calls, etc.)
+- Search and filter candidates
+- Export filtered list to Excel
+- Authentication for HR login
+- Protected dashboard routes
+- bulk status update
 
-STEP 5 : Open server Folder and write command "nodemon index.js"
+## 🛠️ Tech Stack
 
-STEP 6 : install the packages that are required to run the server  
-
-STEP 7 : Open   client Folder and write command "npm start"
-
-i have deployed the frontend of the project on vercel app  https://frontend-zeta-two-22.vercel.app/ 
-
-backend coding of project is completed (all the requirements of backend is complted ) just hosting is  remaining .. 
+**Frontend**: React.js, Axios, Bootstrap  
+**Backend**: Node.js, Express.js  
+**Database**: MongoDB  
+**Authentication**: JWT  
+**Excel Parsing**: Multer, XLSX
