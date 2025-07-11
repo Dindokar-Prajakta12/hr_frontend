@@ -341,6 +341,7 @@ const handleBulkUpdate = async () => {
   candidates={candidates}
   refresh={fetchCandidates}
   selectedIds={selectedIds}
+    fetchSummary={fetchSummary} 
   setSelectedIds={setSelectedIds}
 />
 <div className="flex items-center gap-4 mt-4 px-6">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CandidateTable = ({ candidates, refresh, selectedIds, setSelectedIds }) => {
+const CandidateTable = ({ candidates, refresh, selectedIds, fetchSummary,setSelectedIds }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
@@ -14,6 +14,8 @@ const CandidateTable = ({ candidates, refresh, selectedIds, setSelectedIds }) =>
       { headers: { Authorization: `Bearer ${token}` } }
     );
     refresh();
+        if (fetchSummary) fetchSummary(); // <-- Add this line
+
   };
 
   const updateNote = async (id, notes) => {
@@ -24,6 +26,8 @@ const CandidateTable = ({ candidates, refresh, selectedIds, setSelectedIds }) =>
       { headers: { Authorization: `Bearer ${token}` } }
     );
     refresh();
+        if (fetchSummary) fetchSummary(); // <-- Add this line
+
   };
 
   const handleSelect = (id) => {
