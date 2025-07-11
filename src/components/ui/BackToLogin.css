@@ -1,0 +1,16 @@
+.back_tologin_ui{
+    background-color: hwb(50 92% 4%);
+    padding: 0.8rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    font-size: 14px;
+    cursor: pointer;
+    color:hsl(240, 90%, 65%) ;
+    transition: all 0.2s;
+}
+.back_tologin_ui:hover{
+    background-color: hwb(48 84% 5%);
+}

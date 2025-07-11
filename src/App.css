@@ -1,0 +1,10 @@
+.container{
+    padding-inline:10vw ;
+    /* margin-block:3vh ; */
+    z-index: 10;
+}
+.anti-container{
+    padding-inline:-10vw ;
+    /* margin-block:3vh ; */
+    z-index: 1000;
+}
