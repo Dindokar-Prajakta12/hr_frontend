@@ -1,5 +1,5 @@
 const apis = ()=>{
-    const local = 'http://localhost:5000/'
+    const local = 'https://hr-backend-2-c07c.onrender.com/'
 
     const list = {
         registerUser:`${local}user/register`,

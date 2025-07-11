@@ -20,7 +20,7 @@ const [bulkStatus, setBulkStatus] = useState("");
 
   const fetchCandidates = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get("http://localhost:5000/api/candidates", {
+    const res = await axios.get("https://hr-backend-2-c07c.onrender.com/api/candidates", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setCandidates(res.data);
@@ -28,7 +28,7 @@ const [bulkStatus, setBulkStatus] = useState("");
 
   const fetchSummary = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get("http://localhost:5000/api/candidates/summary", {
+    const res = await axios.get("https://hr-backend-2-c07c.onrender.com/api/candidates/summary", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setSummary(res.data);
@@ -75,7 +75,7 @@ const [bulkStatus, setBulkStatus] = useState("");
       setIsUploading(true);
       setUploadProgress(0);
 
-      await axios.post("http://localhost:5000/api/candidates/upload", formData, {
+      await axios.post("https://hr-backend-2-c07c.onrender.com/api/candidates/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -102,7 +102,7 @@ const [bulkStatus, setBulkStatus] = useState("");
   const downloadExcel = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/candidates/export/excel", {
+      const res = await axios.get("https://hr-backend-2-c07c.onrender.com/api/candidates/export/excel", {
         headers: { Authorization: `Bearer ${token}` },
         responseType: "blob",
       });
@@ -123,7 +123,7 @@ const [bulkStatus, setBulkStatus] = useState("");
 const handleFilteredDownload = async () => {
   const token = localStorage.getItem("token");
   try {
-    let url = "http://localhost:5000/api/candidates/export/excel";
+    let url = "https://hr-backend-2-c07c.onrender.com/api/candidates/export/excel";
     if (exportFilter) {
       url += `?status=${encodeURIComponent(exportFilter)}`;
     }
@@ -158,7 +158,7 @@ const handleBulkUpdate = async () => {
 
   try {
     await axios.put(
-      "http://localhost:5000/api/candidates/bulk-update",
+      "https://hr-backend-2-c07c.onrender.com/api/candidates/bulk-update",
       { ids: selectedIds, status: bulkStatus },
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -289,7 +289,7 @@ const handleBulkUpdate = async () => {
 
         </form>
 
-<div className="flex items-center gap-4 mt-6 px-6">
+{/* <div className="flex items-center gap-4 mt-6 px-6 ">
   <select
     onChange={(e) => setExportFilter(e.target.value)}
     className="border border-gray-300 rounded-md px-3 py-1"
@@ -303,12 +303,34 @@ const handleBulkUpdate = async () => {
 
   <button
     onClick={handleFilteredDownload}
-    className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+    className="bg-red-600 text-white px-4 py-2  rounded-md hover:bg-red-700 transition"
   >
     Export Filtered Excel
   </button>
-</div>
+</div> */}
 
+
+<div className="w-full flex justify-center mt-6 px-6">
+  <div className="flex items-center gap-4">
+    <select
+      onChange={(e) => setExportFilter(e.target.value)}
+      className="border border-gray-300 rounded-md px-3 py-1"
+    >
+      <option value="">All</option>
+      <option value="Shortlisted">Shortlisted</option>
+      <option value="Rejected">Rejected</option>
+      <option value="Interested">Interested</option>
+      <option value="Not Connected">Not Connected</option>
+    </select>
+
+    <button
+      onClick={handleFilteredDownload}
+      className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition ml-4"
+    >
+      Export Filtered Excel
+    </button>
+  </div>
+</div>
 
 
 
