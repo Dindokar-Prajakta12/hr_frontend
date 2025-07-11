@@ -79,7 +79,7 @@ const CandidateTable = ({ candidates, refresh, selectedIds, fetchSummary,setSele
           }}
         />
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto w-[80vw]">
           <table className="min-w-full bg-white border">
             <thead className="bg-gray-100">
               <tr>
