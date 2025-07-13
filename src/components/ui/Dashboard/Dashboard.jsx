@@ -289,26 +289,6 @@ const handleBulkUpdate = async () => {
 
         </form>
 
-{/* <div className="flex items-center gap-4 mt-6 px-6 ">
-  <select
-    onChange={(e) => setExportFilter(e.target.value)}
-    className="border border-gray-300 rounded-md px-3 py-1"
-  >
-    <option value="">All</option>
-    <option value="Shortlisted">Shortlisted</option>
-    <option value="Rejected">Rejected</option>
-    <option value="Interested">Interested</option>
-    <option value="Not Connected">Not Connected</option>
-  </select>
-
-  <button
-    onClick={handleFilteredDownload}
-    className="bg-red-600 text-white px-4 py-2  rounded-md hover:bg-red-700 transition"
-  >
-    Export Filtered Excel
-  </button>
-</div> */}
-
 
 <div className="w-full flex justify-center mt-6 px-6">
   <div className="flex items-center gap-4">
@@ -344,7 +324,7 @@ const handleBulkUpdate = async () => {
     fetchSummary={fetchSummary} 
   setSelectedIds={setSelectedIds}
 />
-<div className="flex items-center gap-4 mt-4 px-6">
+<div className="flex justify-center items-center gap-4 mt-4 px-6">
   <select
     value={bulkStatus}
     onChange={(e) => setBulkStatus(e.target.value)}
