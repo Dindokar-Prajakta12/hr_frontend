@@ -77,3 +77,29 @@
     padding:1rem 0 ;
 }
 
+
+
+
+/* ✅ Responsive Media Query */
+@media (max-width: 480px) {
+    .auth_main {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .auth_options {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .auth_title,
+    .auth_heading {
+        font-size: 1rem;
+    }
+
+    .auth_header svg {
+        font-size: 1.5rem;
+    }
+}
